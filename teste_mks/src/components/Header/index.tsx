@@ -8,7 +8,6 @@ const Header = () => {
   const cart = useSelector(useCart);
   const amount = cart.reduce((acc, item) => acc + item.amount, 0);
 
-  console.log(cart);
   return (
     <div style={{ display: "flex" }}>
       <h2>MKS sistemas</h2>
