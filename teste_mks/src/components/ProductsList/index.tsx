@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Row } from "../../styles/globals";
 import API from "../API";
 import Item from "../Item";
 import Shimmer from "../Shimmer";
@@ -28,11 +29,11 @@ const ProductsList = () => {
   return (
     <>
       {mounted ? (
-        <div>
+        <Row wrap="wrap" margin="2.5% 5%">
           {productList.map((item) => (
             <Item key={item.id} item={item} type="store" />
           ))}
-        </div>
+        </Row>
       ) : (
         <Shimmer />
       )}
