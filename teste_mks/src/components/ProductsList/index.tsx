@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import API from "../API";
+import Item from "../Item";
 import Shimmer from "../Shimmer";
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   brand: string;
@@ -29,7 +30,7 @@ const ProductsList = () => {
       {mounted ? (
         <div>
           {productList.map((item) => (
-            <span key={item.id}>{item.name}</span>
+            <Item key={item.id} item={item} />
           ))}
         </div>
       ) : (
