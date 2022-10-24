@@ -30,7 +30,7 @@ const ProductsList = () => {
       {mounted ? (
         <div>
           {productList.map((item) => (
-            <Item key={item.id} item={item} />
+            <Item key={item.id} item={item} type="store" />
           ))}
         </div>
       ) : (

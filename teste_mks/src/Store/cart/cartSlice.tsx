@@ -25,11 +25,24 @@ const cartSlice = createSlice({
         state[index].amount += 1;
       }
     },
+    removeOne(state, { payload }: PayloadAction<any>) {
+      const index = state.findIndex((element) => element.id === payload.id);
+      if (state[index].amount > 0) {
+        state[index].amount -= 1;
+      }
+      if (state[index].amount === 0) {
+        state.splice(index, 1);
+      }
+    },
+    removeAll(state, { payload }: PayloadAction<any>) {
+      const index = state.findIndex((element) => element.id === payload.id);
+      state.splice(index, 1);
+    },
   },
 });
 
 export default cartSlice.reducer;
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeAll, removeOne } = cartSlice.actions;
 export const useCart = (state: any) => {
   return state.cart as CartProduct[];
 };
