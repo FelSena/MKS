@@ -11,7 +11,7 @@ export const HeaderBar = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 767px) {
-    height: 48px;
+    min-height: 48px;
   }
 `;
 

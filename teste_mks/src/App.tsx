@@ -1,13 +1,16 @@
 import React from "react";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ProductsList from "./components/ProductsList";
+import { Column } from "./styles/globals";
 
 function App() {
   return (
-    <div className="App">
+    <Column justify="space-between" height="100vh">
       <Header />
       <ProductsList />
-    </div>
+      <Footer />
+    </Column>
   );
 }
 

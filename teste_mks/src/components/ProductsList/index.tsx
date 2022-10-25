@@ -27,23 +27,31 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <>
+    <Row
+      wrap="wrap"
+      margin="3.5% 5%"
+      width="90%"
+      gap="10px"
+      justify="flex-start"
+    >
       {mounted ? (
-        <Row
-          wrap="wrap"
-          margin="3.5% 5%"
-          width="90%"
-          gap="10px"
-          justify="flex-start"
-        >
+        <>
           {productList.map((item) => (
             <Item key={item.id} item={item} type="store" />
           ))}
-        </Row>
+        </>
       ) : (
-        <Shimmer />
+        <>
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+        </>
       )}
-    </>
+    </Row>
   );
 };
 

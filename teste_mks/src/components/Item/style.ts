@@ -57,6 +57,11 @@ export const ItemOnCart = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    width: 250px;
+    min-height: 220px;
+  }
 `;
 
 export const AmountBox = styled.div`
@@ -101,4 +106,10 @@ export const RemoveAll = styled.button`
   bottom: 45px;
   left: 25px;
   color: #fff;
+  @media (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+    bottom: 200px;
+    left: 120px;
+  }
 `;

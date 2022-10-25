@@ -46,11 +46,18 @@ export const ColumnItems = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-bottom: 10px;
   gap: 20px;
   padding: 15px 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  @media (max-width: 767px) {
-    overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #00bfff;
+    border-radius: 5px;
   }
 `;

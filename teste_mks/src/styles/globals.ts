@@ -66,6 +66,9 @@ export const Row = styled.div<BoxProps>`
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};
   flex-wrap: ${(props) => props.wrap};
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
 `;
 
 export const Column = styled.div<BoxProps>`
@@ -80,5 +83,3 @@ export const Column = styled.div<BoxProps>`
   margin: ${(props) => props.margin};
   flex-wrap: ${(props) => props.wrap};
 `;
-
-

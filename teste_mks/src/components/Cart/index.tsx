@@ -10,10 +10,10 @@ const Cart = ({ setShowCart }: any) => {
     (acc, item) => acc + item.amount * item.price,
     0
   );
-  
+
   return (
     <CartDiv>
-      <Row justify="space-between" width="90%">
+      <Row justify="space-between" width="90%" padding="15px 0">
         <ThemeSpan size="27px" weight="600" color="white">
           Carrinho de compras
         </ThemeSpan>
