@@ -67,3 +67,18 @@ export const Row = styled.div<BoxProps>`
   margin: ${(props) => props.margin};
   flex-wrap: ${(props) => props.wrap};
 `;
+
+export const Column = styled.div<BoxProps>`
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height};
+  display: flex;
+  flex-direction: column;
+  align-items: ${(props) => props.items || "center"};
+  justify-content: ${(props) => props.justify || "center"};
+  gap: ${(props) => props.gap};
+  padding: ${(props) => props.padding};
+  margin: ${(props) => props.margin};
+  flex-wrap: ${(props) => props.wrap};
+`;
+
+

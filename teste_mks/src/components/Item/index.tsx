@@ -1,11 +1,20 @@
 import { useDispatch } from "react-redux";
 import { addToCart, removeAll, removeOne } from "../../Store/cart/cartSlice";
-import { Row, ThemeImg, ThemeSpan } from "../../styles/globals";
-import { BtnCart, ItemBox, PriceBox } from "./style";
+import { Column, Row, ThemeImg, ThemeSpan } from "../../styles/globals";
+import {
+  AmountBox,
+  AmountBtn,
+  BtnCart,
+  ItemBox,
+  ItemOnCart,
+  PriceBox,
+  RemoveAll,
+} from "./style";
 import bag from "../assets/shopping-bag.svg";
 
 const Item = ({ item, type }: any) => {
   const dispatch = useDispatch();
+  const totalItem = item.amount * item.price;
 
   if (type === "store") {
     return (
@@ -30,13 +39,31 @@ const Item = ({ item, type }: any) => {
     );
   } else {
     return (
-      <div style={{ display: "column" }}>
-        <span>{item.name}</span>
-        <button onClick={() => dispatch(removeOne(item))}>-</button>
-        <span>{item.amount}</span>
-        <button onClick={() => dispatch(addToCart(item))}>+</button>
-        <button onClick={() => dispatch(removeAll(item))}>Remover tudo</button>
-      </div>
+      <ItemOnCart>
+        <ThemeImg src={item.photo} width="50px" />
+        <Row margin="0 0 0 5px">
+          <ThemeSpan size="14px" weight="600">
+            {item.name}
+          </ThemeSpan>
+        </Row>
+        <Column>
+          <AmountBox>
+            <AmountBtn right={true} onClick={() => dispatch(removeOne(item))}>
+              -
+            </AmountBtn>
+            <ThemeSpan size="12px" weight="400">
+              {item.amount}
+            </ThemeSpan>
+            <AmountBtn left={true} onClick={() => dispatch(addToCart(item))}>
+              +
+            </AmountBtn>
+          </AmountBox>
+        </Column>
+        <ThemeSpan weight="700" size="14px">
+          R${totalItem}.00
+        </ThemeSpan>
+        <RemoveAll onClick={() => dispatch(removeAll(item))}>X</RemoveAll>
+      </ItemOnCart>
     );
   }
 };
