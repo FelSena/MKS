@@ -10,6 +10,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     width: 100vw;
     height: 100vh;
+    background-color: #E5E5E5;
 }
 a {
     text-decoration: none;
@@ -59,8 +60,8 @@ export const Row = styled.div<BoxProps>`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height};
   display: flex;
-  align-items: ${(props) => props.items || "center%"};
-  justify-content: ${(props) => props.justify || "center%"};
+  align-items: ${(props) => props.items || "center"};
+  justify-content: ${(props) => props.justify || "center"};
   gap: ${(props) => props.gap};
   padding: ${(props) => props.padding};
   margin: ${(props) => props.margin};

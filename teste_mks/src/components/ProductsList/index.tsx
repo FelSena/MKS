@@ -29,7 +29,13 @@ const ProductsList = () => {
   return (
     <>
       {mounted ? (
-        <Row wrap="wrap" margin="2.5% 5%">
+        <Row
+          wrap="wrap"
+          margin="3.5% 5%"
+          width="90%"
+          gap="10px"
+          justify="flex-start"
+        >
           {productList.map((item) => (
             <Item key={item.id} item={item} type="store" />
           ))}

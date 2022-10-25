@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <HeaderBar>
-      <Row items="baseline" gap="2px">
+      <Row items="baseline" gap="2px" justify="flex-start">
         <ThemeH1>MKS</ThemeH1>
         <ThemeSpan color="white">Sistemas</ThemeSpan>
       </Row>
